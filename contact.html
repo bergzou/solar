@@ -339,6 +339,154 @@
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
+
+    .contact-container {
+        display: flex;
+        width: 100%;
+        max-height: 900px;
+        margin: 2rem auto;
+        max-width: 1200px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .contact-info {
+        flex: 1;
+        padding: 30px;
+        background: #f8f9fa;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto; /* 添加滚动条以防内容溢出 */
+    }
+    .contact-info h2 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        position: relative;
+        padding-bottom: 8px;
+    }
+    .contact-info p {
+        margin-bottom: 1rem;
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    /* 微信样式调整 */
+    .wechat-contact {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+    }
+    .wechat-contact img {
+        width: 150px;
+        height: 175px;
+        object-fit: contain; /* 保持图片比例不变形 */
+    }
+    .wechat-contact p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    .contact-image {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        background: #f5f5f5; /* 添加背景色 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* 确保完整显示图片 */
+        transition: transform 0.3s ease;
+    }
+    .contact-image:hover img {
+        transform: scale(1.02);
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+        .contact-image {
+            height: 500px; /* 移动端固定高度 */
+        }
+    }
+    .contact-image:hover img {
+        transform: scale(1.03);
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column;
+            height: auto;
+        }
+        .contact-info, .contact-image {
+            flex: none;
+            width: 100%;
+        }
+        .contact-image {
+            height: 300px;
+        }
+    }
+
+
+
+
+
+
+    .contact-info h2 {
+        color: #2c3e50;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .contact-info h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: #4CAF50;
+    }
+    .contact-info p {
+        margin-bottom: 1.2rem;
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    .contact-info strong {
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    .contact-map {
+        flex: 1;
+        height: 100%;
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column;
+            height: auto;
+        }
+        .contact-info, .contact-map {
+            flex: none;
+            width: 100%;
+        }
+        .contact-map {
+            height: 300px;
+        }
+    }
+
+
+
+
+
+
     </style>
 
 
@@ -371,34 +519,34 @@
     </div>
 
     <!-- 修改后的图片排列结构 -->
-    <div class="image-container">
-
-        <!-- 其他产品图片保持原有结构 -->
-        <div class="product-row">
-            <img src="images/solar_2_1.png" alt="Product 3" class="product-image">
+    <div class="contact-container">
+        <!-- 左侧联系方式 -->
+        <div class="contact-info">
+        
+            <p><strong>公司：</strong>中山市星铭航照明科技有限公司</p>
+            <p><strong>地址：</strong>广东省中山市古镇曹三工业大道中东一路6号</p>
+            <p><strong>电话：</strong>+8618825113201</p>
+            <p><strong>邮箱：</strong>mh1240836@gmail.com</p>
+            
+            <!-- 新增微信联系方式 -->
+            <div class="wechat-contact">
+                <img src="images/wechat.jpg" alt="微信二维码" loading="lazy">
+                <p>扫描二维码添加微信</p>
+            </div>
         </div>
-
-        <div class="product-row">
-            <img src="images/solar_2_2.png" alt="Product 3" class="product-image">
+        
+        <!-- 右侧图片 -->
+        <div class="contact-image">
+            <img 
+                src="images/contact.jpg" 
+                alt="公司实景" 
+                loading="lazy"
+            >
         </div>
-        <div class="product-row">
-            <img src="images/solar_2_3.png" alt="Product 3" class="product-image">  
-        </div>
-        <div class="product-row">
-            <img src="images/solar_2_4.png" alt="Product 3" class="product-image">
-        </div>
-        <div class="product-row">
-            <img src="images/solar_2_5.png" alt="Product 3" class="product-image">
-        </div>
-        <div class="product-row">
-            <img src="images/solar_2_6.png" alt="Product 3" class="product-image">
-        </div>
-        <div class="product-row">
-            <img src="images/solar_2_7.png" alt="Product 3" class="product-image">
-        </div>
-      
     </div>
 
+    
+    
     <!-- Footer Section -->
     <!-- 优化后的页脚 -->
     <footer>
